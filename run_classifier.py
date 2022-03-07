@@ -28,6 +28,8 @@ import tensorflow.compat.v1 as tf
 from tensorflow.contrib import cluster_resolver as contrib_cluster_resolver
 from tensorflow.contrib import tpu as contrib_tpu
 
+print("This verifies that you are running London's version of ALBERT")
+
 flags = tf.flags
 
 FLAGS = flags.FLAGS
