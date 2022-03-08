@@ -299,7 +299,7 @@ def main(_):
   # If TPU is not available, this will fall back to normal Estimator on CPU
   # or GPU.
   estimator = TPUEstimatorWithEncoding(
-      sequence_output=None
+      sequence_output=None,
       use_tpu=FLAGS.use_tpu,
       model_fn=model_fn,
       config=run_config,
