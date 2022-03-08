@@ -27,6 +27,7 @@ from albert import modeling
 import tensorflow.compat.v1 as tf
 from tensorflow.contrib import cluster_resolver as contrib_cluster_resolver
 from tensorflow.contrib import tpu as contrib_tpu
+from albert.tpu_estimator_with_encoding import TPUEstimatorWithEncoding
 
 print("This verifies that you are running Jadiker's version of ALBERT")
 
@@ -296,7 +297,7 @@ def main(_):
 
   # If TPU is not available, this will fall back to normal Estimator on CPU
   # or GPU.
-  estimator = contrib_tpu.TPUEstimator(
+  estimator = TPUEstimatorWithEncoding(
       use_tpu=FLAGS.use_tpu,
       model_fn=model_fn,
       config=run_config,
