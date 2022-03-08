@@ -515,7 +515,7 @@ def main(_):
         bsz=FLAGS.predict_batch_size)
 
     checkpoint_path = os.path.join(FLAGS.output_dir, "model.ckpt-best")
-    result = estimator.predict_with_embeddings(
+    result = estimator.predict_with_encoding(
         input_fn=predict_input_fn,
         checkpoint_path=checkpoint_path)
 
