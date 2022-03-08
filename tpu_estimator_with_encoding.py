@@ -140,3 +140,11 @@ class TPUEstimatorWithEncoding(contrib_tpu.TPUEstimator):
                                     key: value[i]
                                     for key, value in six.iteritems(preds_evaluated)
                                 }
+
+def _check_hooks_type(hooks):
+  """Returns hooks if all are SessionRunHook, raises TypeError otherwise."""
+  hooks = list(hooks or [])
+  for h in hooks:
+    if not isinstance(h, training.SessionRunHook):
+      raise TypeError('Hooks must be a SessionRunHook, given: {}'.format(h))
+  return hooks
