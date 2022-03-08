@@ -54,9 +54,6 @@ class TPUEstimatorWithEncoding(contrib_tpu.TPUEstimator):
         super(TPUEstimatorWithEncoding, self).__init__(*args, **kwargs)
         self.sequence_output = sequence_output
 
-    def predict(self, *args, **kwargs):
-        return self.predict_with_encoding(*args, **kwargs)
-
     def predict_with_encoding(self,
             input_fn,
             predict_keys=None,
